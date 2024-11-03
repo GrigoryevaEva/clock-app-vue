@@ -1,20 +1,25 @@
+import { RejectedDataType } from "../../../shared/types/errors"
+
 export interface IDateStore {
-  readonly date: Date
+  date: Date
 
-  readonly abbr: string
-  readonly city: string
-  readonly countryCode: string
-  readonly timezone: string
+  abbrTZ: string
+  city: string
+  countryCode: string
+  timezone: string
+
+  loading: boolean
+  error: null | RejectedDataType
 }
 
-export type Getters = {
-  readonly dayYear: (state: IDateStore) => number
-  readonly dayWeek: (state: IDateStore) => number
-  readonly weekYear: (state: IDateStore) => number
-  readonly location: (state: IDateStore) => string
-  readonly dayTime: (state: IDateStore) => string
-}
+// export type Getters = {
+//   readonly dayYear: ( => number
+//   readonly dayWeek: (state: IDateStore) => number
+//   readonly weekYear: (state: IDateStore) => number
+//   readonly location: (state: IDateStore) => string
+//   readonly dayTime: (state: IDateStore) => string
+// }
 
-export type Actions = {
-  readonly fetchDate: () => void
-}
+// export type Actions = {
+//   readonly fetchDate: (state: IDateStore) => void
+// }
